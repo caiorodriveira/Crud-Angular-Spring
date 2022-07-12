@@ -16,7 +16,7 @@ export class CursosService {
     return this.httpClient.get<Curso[]>(this.API)
     .pipe(//tratamento de erros
       first(),
-      delay(5000),
+      // delay(5000),
       tap(cursos => console.log(cursos))
     );
   }
