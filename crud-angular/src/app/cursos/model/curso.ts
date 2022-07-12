@@ -3,3 +3,4 @@ export interface Curso {
   nome: string;
   categoria: string;
 }
+//tipos de campos na tabela

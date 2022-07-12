@@ -9,7 +9,7 @@ import { Curso } from '../model/curso';
 export class CursosComponent implements OnInit {
 
   cursos: Curso[] = [
-    { _id: "1", nome: "Angular", categoria:"front-end"}
+    { _id: "1", nome: "Angular", categoria:"Front-end"}//valores da tabela
   ];
   displayedColumns = ['nome','categoria'];
   constructor() {
