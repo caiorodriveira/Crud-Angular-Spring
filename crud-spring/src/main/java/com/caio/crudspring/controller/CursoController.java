@@ -18,9 +18,7 @@ public class CursoController {
 
     
     private final /*não altera instancia*/ CursoRepositorio cursoRepositorio;
-    // public CursoController(CursoRepositorio cursoRepositorio) {
-    //    this.cursoRepositorio = cursoRepositorio; //gerar costructor no source action
-    // } gerado pelo lombok
+     //gerar costructor no source action - ou gerar pelo lombock
     @GetMapping //@RequestMapping(method = RequestMethod.GET)
     public List<Curso> list(){
         return cursoRepositorio.findAll();
