@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { ActivatedRoute, Router } from '@angular/router';
 import { catchError, Observable, of } from 'rxjs';
 
 import { Curso } from '../model/curso';
@@ -16,13 +17,15 @@ export class CursosComponent implements OnInit {
   cursos$: Observable<Curso[]>;
 
   // cursos: Curso[] = [];
-  displayedColumns = ['nome', 'categoria'];
+  displayedColumns = ['nome', 'categoria', 'acoes'];
 
   // cursosService: CursosService;
 
   constructor(
     private cursosService: CursosService,
-    public dialog: MatDialog
+    public dialog: MatDialog,
+    public rota: Router,
+    public rotaatual: ActivatedRoute,
     ) {
     // this.cursos = [];
     // this.cursosService = new CursosService();
@@ -44,4 +47,7 @@ export class CursosComponent implements OnInit {
     });
   }
   ngOnInit(): void {}
+  onAdd() {
+    this.rota.navigate(['novo'],{relativeTo:this.rotaatual})
+  }
 }
