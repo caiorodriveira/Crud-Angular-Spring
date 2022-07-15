@@ -22,4 +22,7 @@ export class CursosService {
       tap(cursos => console.log(cursos))
     );
   }
+  save(registro: Curso){ //registro = this.formularo.value
+    return this.httpClient.post<Curso>(this.API, registro)
+  }
 }
