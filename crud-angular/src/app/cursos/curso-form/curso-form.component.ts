@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-curso-form',
@@ -7,9 +8,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CursoFormComponent implements OnInit {
 
-  constructor() { }
+  formulario: FormGroup;
+
+  constructor(
+    private construtorForm: FormBuilder
+    ){
+      this.formulario = this.construtorForm.group({
+        nome: [null],
+        categoria:[null],
+      })
+   }
 
   ngOnInit(): void {
   }
 
+  onSubmit() {
+
+  }
+  onCancel() {
+    
+  }
 }
